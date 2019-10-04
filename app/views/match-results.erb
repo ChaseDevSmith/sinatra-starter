@@ -1,0 +1,30 @@
+<form method = "post" action = "/tally" >
+<style>
+body {
+  background-color: lightgreen;
+}
+</style>
+<h1> Who Won? </h1>
+<h1> <%= @player1.name %> </h1>
+<h3> VS </h3>
+<h1> <%= @player2.name %> </h1>
+<label for = "winner"> Winner </label>
+<select id = "winner" name='player_win'>
+         <option value= <%=@player1.id%> > <%=@player1.name%> </option>
+         <option value= <%=@player2.id%>> <%=@player2.name%> </option>
+</select>
+<label for = "loser"> Loser </label>
+<select id = "loser" name='player_lose'>
+         <option value= <%=@player1.id%> > <%=@player1.name%> </option>
+         <option value= <%=@player2.id%> > <%=@player2.name%> </option>
+</select>
+
+<body>
+<style>
+body {
+  background-color: lightgreen;
+}
+</style>
+<<a href="/">Back to Home!</a>
+<input type = "submit" >
+</form>

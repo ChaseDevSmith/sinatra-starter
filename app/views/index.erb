@@ -1,0 +1,45 @@
+
+
+
+<form action = "/next-thing" method = "post">
+
+<h2> PING PONG SCORE KEEPER </h2>
+<br>
+<body>
+<style>
+body {
+  background-color: lightgreen
+}
+</style>
+
+
+<label for = "player_one_selector"> SELECT FIRST PLAYER! </label>
+<select name="player_one" id = "player_one_selector" type = "select" required = "required">
+    <option disabled selected value> --~!select a player!~-- </option>
+    
+    <% @users.each do |player|%>
+
+        <option value = "<%= player.name %>">  "<%= player.name %>" </option>
+    <%end%>
+</select>
+<h4> VS </h4>
+<label for = "player_two_selector"> SELECT SECOND PLAYER! </label>
+<select name="player_two" id = "player_two_selector" type = "select" required = "required" >
+    <option disabled selected value> --~!select a player!~-- </option>
+    
+    <% @users.each do |player|%>
+        <option value = "<%= player.name %>">  "<%= player.name %>" </option>
+    <%end%>
+</select>
+
+</body>
+<br>
+<br>
+<br>
+
+
+<a href="/new-user">Create a New User!</a>
+<input type="submit" value="Go To a Match" />
+
+
+</form>
